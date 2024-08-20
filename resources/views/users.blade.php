@@ -16,6 +16,9 @@
                 UserList CRUD
                 <a href="/add/user" class="btn btn-success btn-sm float-end">Add new</a>
             </div>
+            @if(Session::has('success'))
+                <span class="alert alert-success p-2">{{Session::get('success')}}</span>
+            @endif
             <div class="card-body">
                 <table class="table table-sm table-striped table-bordered">
                     <thead>
