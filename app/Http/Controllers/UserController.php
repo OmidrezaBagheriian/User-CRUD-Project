@@ -39,8 +39,18 @@ class UserController extends Controller
         }catch (\exception $exception){
             return redirect('/add/user')->with('fail', $exception->getMessage());
         }
+    }
 
-
+    public function deleteUser($id)
+    {
+        try {
+            User::where('id',$id)->delete();
+            return redirect('/users')->with('success', 'User deleted successfully');
+        } catch (\exception $exception){
+            return redirect('/users')->with('fail', $exception->getMessage());
+        }
+    }
+    public function loadEditUser($id){
 
     }
 }

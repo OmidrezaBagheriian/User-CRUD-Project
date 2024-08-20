@@ -28,6 +28,7 @@
                 <th>Phone Number</th>
                 <th>Registration</th>
                 <th>Last Update</th>
+                <th>Action</th>
                 </thead>
                 <tbody>
                 @if(count($all_users)>0)
@@ -39,11 +40,15 @@
                             <td>{{$item->phone_number}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>{{$item->updated_at}}</td>
+                            <td>
+                                <a href="/edit/{{$item->id}}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="/delete/{{$item->id}}" class="btn btn-danger btn-sm float-end">Delete</a>
+                            </td>
                         </tr>
                     @endforeach
                 @else
                     <tr>
-                        <td>No User Found!</td>
+                        <td colspan="7">No User Found!</td>
                     </tr>
                 @endif
                 </tbody>
