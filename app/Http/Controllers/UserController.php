@@ -10,7 +10,8 @@ class UserController extends Controller
 {
     public function loadAllUsers()
     {
-        return view('users');
+        $all_users = User::all();
+        return view('users',compact('all_users'));
     }
 
     public function loadAddUser()
